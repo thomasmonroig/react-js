@@ -1,74 +1,51 @@
 import React, { Component } from 'react'
 
-import picture from './img/paris.jpg'
-
 import './WeatherCard.css'
 
 class WeatherCard extends Component {
 
-    // THIS COMPONENT TAKES A 'data' object as "props"
-
-    /*
-        DATA FORMAT SENT BY THE API :
-
-        {
-            "location": {
-                "name": string,
-                "region": string,
-                "country": string,
-                "lat": number,
-                "lon": number,
-                "tz_id": string,
-                "localtime_epoch": number,
-                "localtime": string
-            },
-            "current": {
-                "temp_c": number,
-                "is_day": boolean,
-                "condition": {
-                    "text": string,
-                    "icon": string
-                },
-                "wind_kph": number
-            }
-        }
-
-    */
-
-
     render() {
 
-        const weather = this.props.data
+        var { title, name, date_created, number, picture } = this.props
+
 
         return (
+
             <div className="card horizontal" style={ { margin: 'auto' } }>
-                <div className="card-image">
-                    <img alt="city" src={ picture } />
-                    <span className="card-title" style={ { fontSize: 36 } }>
-                        { weather.current.temp_c } °C
-                    </span>
+
+
+                <div className="card-image weather-img-container">
+                    <img alt="city" className="weather-img" src={ picture } />
                 </div>
-                <div className="card-stacked">
-                    <div className="card-content">
+                <div className="card-stacked cyan darken-4">
+                    <div className="card-content ">
 
                         <div className="weather-data">
                             <p>
                                 <i className="material-icons">info</i>
-                                <span>{ weather.current.condition.text }</span>
+                                <span>Date of publication: { date_created }</span>
                             </p>
                             <p>
                                 <i className="material-icons">flag</i>
-                                <span>{ weather.current.wind_kph } kph</span>
+                                <span>Title: { title } </span>
                             </p>
+                            <p>
+                                <i className="material-icons">flag</i>
+                                <span>Name of album: { name } </span>
+                            </p>
+                            <p>
+                                <i className="material-icons">flag</i>
+                                <span>Number of hit: { number } </span>
+                            </p>
+
                         </div>
 
-                        <img alt="icon" className="weather-icon" src={ weather.current.condition.icon } />
                     </div>
                     <div className="card-action center-align">
-                        <a className="weather-city" href="#" onClick={ e => e.preventDefault() }>{ weather.location.name }</a>
+                        <a className="weather-city" href="#" onClick={ e => e.preventDefault() }>{ name }</a>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 

@@ -1,12 +1,10 @@
 import * as request from 'request-promise'
 
 
-/* FREE JSON API EXAMPLE */
-/* https://www.apixu.com/api-explorer.aspx */
-
 export const ENDPOINTS = {
 
-    WEATHER_API_URL: 'http://api.apixu.com/v1/current.json'
+    WEATHER_API_URL: 'https://freemusicarchive.org/api/get/tracks.json',
+
 
 }
 
@@ -21,5 +19,5 @@ export function get( url, queryParameters ) {
         json: true,
         uri: url,
         qs: queryParameters
-    })
+    } )
 }

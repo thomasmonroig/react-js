@@ -2,25 +2,61 @@
     position: absolute;
     right: 10px;
     top: 10px;
+    
 }
 
 .weather-data {
     padding-right: 60px;
     font-size: 125%;
+    
 }
 
 .weather-data i {
     margin-right: 5px;
     color: #ffab40;
     vertical-align: middle;
+   
 }
 
 .weather-data p {
     margin-bottom: 15px !important;
+   
 }
 
 .weather-city {
     font-size: 22px;
     pointer-events: none;
+    
+  
+}
+
+.weather-img-container {
+    max-width: 200px !important;
+    overflow: hidden;
+    background:#006064;
+    
+}
+
+.weather-img-container .card-title {
+    text-shadow: 0px 2px 3px black;
+  
+   
+}
+
+.weather-img {
+    max-height: 240px;
+    max-width: initial !important;
+    
+  
+}
+
+.form {
+  opacity : 1.0;
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 500px;                                       /* block */
+  margin: 100px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
